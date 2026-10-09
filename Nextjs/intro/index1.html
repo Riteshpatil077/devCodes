@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>  
+  
+
+        <script type="text/babel">   
+         const app = document.getElementById("app");
+
+    function Header(props){
+        console.log(props);
+        return <h1>Hello {props.title}</h1>;
+        
+       }
+    // event handler function
+    function handleClick(){
+        console.log("like increment!");
+    }   
+    function HomePage(){
+        const [likes,setLikes] = React.useState(0);
+
+
+
+        const names = ['Alice', 'Bob', 'Charlie'];
+        return (
+            <div>
+                <Header title = "Welcome to my website!" />
+                <ul>{names.map((name) => <li key={name}>{name}</li>)}</ul>
+                <button onClick={handleClick}> like : {Likes}</button>
+            </div>
+        );
+       }
+       const root = ReactDOM.createRoot(app);
+       root.render(<HomePage />);
+    </script>
+</body>
+</html>
