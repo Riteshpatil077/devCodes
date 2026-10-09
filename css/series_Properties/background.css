@@ -1,0 +1,6 @@
+p {
+    background-image: url("star-solid.gif"), url("star-transparent.gif");
+    background-attachment: scroll;
+    background-repeat: no-repeat, repeat-y;
+  }
+  

@@ -1,0 +1,66 @@
+html{
+    background-color: rgb(210, 172, 244);
+}
+
+/*accent-color*/
+input {
+    accent-color: auto;
+    display: block;
+    width: 30px;
+    height: 30px;
+  }
+  
+  input.custom {
+    accent-color: rebeccapurple;
+  }
+
+  section {
+    border: solid 1.5px tomato;
+    height: 300px;
+    width: 200px;
+    flex-wrap: wrap; /* used by flex only */
+    gap: 0.4rem; /* not used by block */
+    background: beige;
+    display: flex;
+    /*align-content: center;*/
+    /*align-content: first baseline;*/
+    /*align-content: space-bettwen;*/ 
+
+    align-items: /*center */ /*start*/ /*stretch*/ /*end*/; 
+    align-items: /*anchor-center*/;
+
+    align-self:flex-start;
+  }
+  .olive {
+    background-color: olive;
+  }
+  .coral {
+    background-color: coral;
+  }
+  .deepskyblue {
+    display: inline-flex;
+    background-color: deepskyblue;
+    
+    aspect-ratio: 1/1;
+  }
+  .orchid {
+    background-color: orchid;
+  }
+  .slateblue {
+    background-color: slateblue;
+    color: white;
+  }
+  .maroon {
+    background-color: maroon;
+    color: white;
+  }
+
+  /*div {
+    height: 60px;
+    background: cyan;
+    margin: 5px;
+  }*/
+
+
+ 
+ 

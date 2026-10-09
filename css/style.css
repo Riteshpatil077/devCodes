@@ -1,0 +1,29 @@
+h1{
+    color:aqua;
+    font-family:Times New Roman;
+    font-size:2.5em;
+}
+/*you can target multiple selectors at the same time by separating the selectors with a comma. */
+p,
+li{
+    color:rgb(179, 121, 121);
+    padding: auto;
+    background:midnightblue;
+}
+
+li em {
+    color: rgb(253, 66, 24);
+  }
+ /*class and id used to provide classify paragraph
+ */
+/*class*/
+.p{
+    color: bisque;
+    background:blueviolet;
+}
+
+/*id*/
+#p{
+    color: bisque;
+    background:rgb(190, 139, 238);
+}
