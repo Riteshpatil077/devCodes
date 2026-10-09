@@ -1,0 +1,104 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  
+}
+
+model User {
+  id                     String         @id @default(uuid())
+  name                   String
+  email                  String         @unique
+  password               String
+  role                   Role           @default(USER)
+  resetPasswordOtp       String?
+  resetPasswordOtpExpiry DateTime?
+  subscriptions          Subscription[]
+  createdAt              DateTime       @default(now())
+  carts                  Cart[]
+  orders                 Order[]
+}
+
+model Magazine {
+  id            String         @id @default(uuid())
+  title         String
+  slug          String         @unique
+  description   String?
+  coverImage    String
+  pdfUrl        String
+  price         Float
+  stock         Int            @default(0)
+  isActive      Boolean        @default(true)
+  createdAt     DateTime       @default(now())
+  subscriptions Subscription[]
+  carts         Cart[]
+  orderItems    OrderItem[]
+}
+
+model Subscription {
+  id         String @id @default(uuid())
+  userId     String
+  magazineId String
+
+  paymentStatus PaymentStatus @default(PENDING)
+  isActive      Boolean       @default(false)
+
+  startDate  DateTime  @default(now())
+  expiryDate DateTime?
+
+  lastReadPage Int @default(1)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  magazine Magazine @relation(fields: [magazineId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, magazineId])
+}
+
+model Cart {
+  id         String   @id @default(uuid())
+  userId     String
+  magazineId String
+  createdAt  DateTime @default(now())
+
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  magazine Magazine @relation(fields: [magazineId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, magazineId]) // prevent duplicate cart items
+}
+
+model Order {
+  id        String      @id @default(cuid())
+  userId    String
+  user      User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  items     OrderItem[]
+  amount    Float
+  address   String
+  phone     String
+  status    String      @default("COMPLETED") // PENDING, COMPLETED, FAILED
+  createdAt DateTime    @default(now())
+}
+
+model OrderItem {
+  id         String   @id @default(cuid())
+  orderId    String
+  order      Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  magazineId String
+  magazine   Magazine @relation(fields: [magazineId], references: [id], onDelete: Cascade)
+  price      Float // Stores the price at the time of purchase
+}
+
+enum Role {
+  ADMIN
+  USER
+}
+
+enum PaymentStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
