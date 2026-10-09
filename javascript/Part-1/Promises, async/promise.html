@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let promise = new Promise(function(resolve,reject)
+        // {
+        //         setTimeout (() => resolve("done"),1000);
+
+        //         setTimeout(() => reject(new Error("Whoops!")), 1000);
+        // });
+
+        let promise = new Promise(function(resolve,reject)
+    {
+            //setTimeout(() => resolve("done"),1000);
+            setTimeout(() => reject(new Error("promises reject!")),1000);
+    });
+
+    promise.then(
+        result => alert(result),
+        //error => alert(error)
+           //or .catch(alert)   // reject show
+
+    );
+    promise.finally(() => alert("Promise ready"));
+       
+    </script>
+</body>
+</html>

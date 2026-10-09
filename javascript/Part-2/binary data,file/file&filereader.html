@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    // Get a file object from an input element
+        <input type="file" onchange="showFile(this)">
+     <script>
+        // file inherits from Blob 
+        function showFile(input) {
+        let file = input.files[0]; // get the first selected file
+        
+        alert(`File name: ${file.name}`); // file name
+        alert(`Last modified: ${file.lastModified}`); // last modified timestamp
+        }
+
+        alert("FileReader Example");
+
+        let reader = new FileReader();
+     </script>
+</body>
+</html>

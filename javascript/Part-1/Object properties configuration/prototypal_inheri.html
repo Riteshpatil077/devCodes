@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <body>
+          <!--prototypal inheritance-->
+        <script>
+            'use strict';
+        let animal = {
+            eats: true,
+            walk()
+            {    
+                if (!this.isSleeping) {
+                alert(`I walk`);
+                    }
+                    else{
+                alert("Animal walk");
+                    }
+            },
+            sleep(){
+                this.issleeping = true;
+            }
+
+        };
+
+        // let rabbit = {
+        //     jumps: true,
+        //     __proto__: animal
+        // };
+
+        // rabbit.__proto__ = animal;
+        // alert( rabbit.eats );
+        // rabbit.sleep();
+
+        //alert(rabbit.issleeping);
+
+        // for (let prop in rabbit)
+        // {
+        //     let isOwn = rabbit.hasOwnProperty(prop);
+
+        //     if(isOwn)
+        // {
+        //         alert(`Our: '${prop }`);
+             
+        // }
+        // else{
+       
+        //     alert(`Inherited : ${prop}`);
+        // }
+        // }
+
+        function Rabbit() {}
+                // Rabbit.prototype = {
+                //     jumps: false
+                // };
+                Rabbit.prototype.jumps = true
+        let rabbit = new Rabbit();
+        alert(rabbit.constructor === Rabbit); // result got true 
+        Rabbit.prototype.eats = true;
+        alert( rabbit.eats );
+
+        delete rabbit.eats;
+        alert(rabbit.eats);
+        delete Rabbit.prototype.eats;
+        alert(rabbit.eats);
+    </script>
+    </body>
+</html>

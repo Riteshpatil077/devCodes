@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <!-- <script>
+     // blob constructor syntax 
+    // new Blob(blobparts,option);
+
+     let blob = new Blob(["<html>...</html>"], {type: 'text/html'}); // create a blob
+     alert(typeof blob); // objec
+
+     let hello = new UintArray([72,101,108,108,111]); // 'Hello' 
+     alert(hello.lenght);
+
+     let blob1 = new Blob([hello, ' ', 'world'], {type: 'text/plain'});
+
+     alert(blob1.slice(0,5, 'text/plain')); // creates a new blob from offset 0 to 5
+   </script> -->
+
+   alert("Blob Example: Download a text file using Blob");
+   <a download="hello.txt" href = "#" id="link">Download</a>
+   <script>
+        // let blob = new Blob(["hello,world"], {type: 'text/plain'});
+
+        // link.href = URL.createObjectURL(blob); // create a URL for the blob
+
+        // link.click(); // programmatically click the link to trigger download
+        // URL.revokeObjectURL(link.href); // clean up the URL object
+   
+   
+        
+        alert("from Blob to Arraybuffer Example");
+        (async function() {
+            const uint8Array = new Uint8Array([72, 101, 108, 108, 111]); // 'Hello'
+            const blob = new Blob([uint8Array], { type: 'text/plain' }); // create a blob
+            const bufferPromise = await blob.arrayBuffer(); // get arraybuffer from blob
+            alert(new TextDecoder().decode(bufferPromise)); // decode and alert the content
+        })();
+     </script>
+</body>
+</html>

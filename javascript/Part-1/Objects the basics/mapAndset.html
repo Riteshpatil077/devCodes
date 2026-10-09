@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <!-- <script>
+            let mao = new map();
+
+            map.set('1','ritesh');// a string key
+            map.set(2,'num2'); // numeric key
+            map.set(true,'bool1');
+
+            alert(map.get('1'));
+            alert(map.get(2));
+
+            alert(map.size);
+            alert("map.has : "+ map.has(2));
+
+            let visitsCountMao = new map();
+
+            visitsCountMap.set(john, 123);
+
+            alert(visitsCountMap.get(john));
+        </script>
+
+        <script>
+            let recipeMap = new Map([
+  ['cucumber', 500],
+  ['tomatoes', 350],
+  ['onion',    50]
+]);
+
+// iterate over keys (vegetables)
+for (let vegetable of recipeMap.keys()) {
+  alert(vegetable); // cucumber, tomatoes, onion
+}
+
+// iterate over values (amounts)
+for (let amount of recipeMap.values()) {
+  alert(amount); // 500, 350, 50
+}
+
+// iterate over [key, value] entries
+for (let entry of recipeMap) { // the same as of recipeMap.entries()
+  alert(entry); // cucumber,500 (and so on)
+}
+        </script> -->
+
+<!-- 
+<script>
+    'use strict';
+    //map from object
+
+    let map = new Map([['cucumber', 500],
+  ['tomatoes', 350],
+  ['onion',    50]],
+    );
+
+ alert(map.get('cucumber'));
+
+  let obj = Object.fromEntries(map.entries());
+  alert(obj.onion);
+</script>
+ -->
+
+
+
+    <!-- set 
+    A Set is a special type collection – “set of values” (without keys), where each value may occur only once.-->
+
+    <!-- <script>
+        set = new Set(); // set is created
+        
+        let john = { name: 'John' };
+        let priti = { name: 'Priti' }; 
+        let kishor = { name: 'kishor' };
+
+        set.add(john);
+        set.add(priti);
+        // set.add(mary);// error
+        set.add(kishor);
+
+        alert(set.size);
+
+        for(let user of set)
+    {
+        alert(user.name);  // iterate set
+    }
+        alert("Done");
+    </script> -->
+
+    <script>
+        // tasks
+
+        // function unique(arr)
+        // {
+        //     return Array.from(new Set(arr));
+        // }
+         
+        function unique(arr)
+        {
+            let set =  new Set();
+            for(let value of arr)
+        {
+            set.add(value);
+        }
+         return Array.from(set);
+        }
+
+        let values = ["Hare", "Krishna", "Hare", "Krishna",
+  "Krishna", "Krishna", "Hare", "Hare", ":-O"
+];
+alert(unique(values));
+    </script>
+    </body>
+</html>

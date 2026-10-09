@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<script>
+    alert("without fetching any resource");
+    let controller = new AbortController(); // create object 
+
+    let signal = controller.signal; // get the signal
+
+    signal.addEventListener('abort', () => {
+        alert('Fetch aborted');
+    });
+
+    controller.abort();
+
+    alert(signal.aborted); // true
+
+    alert("after aborting the fetch");
+
+    alert("With fetching resource");
+     const controller1 = new AbortController();
+
+     fetch('https://jsonplaceholder.typicode.com/posts', {
+        signal: controller1.signal});
+        controller1.abort();
+        alert("Fetch this not runs becasue it is aborted");
+
+        alert("multiple fetches")
+        const controller2 = new AbortController();
+
+const urls = [
+  '/api/one',
+  '/api/two',
+  '/api/three'
+];
+
+const jobs = urls.map(url =>
+  fetch(url, { signal: controller2.signal })
+);// start all fetches
+
+// Abort ALL requests at once
+controller2.abort();
+</script>

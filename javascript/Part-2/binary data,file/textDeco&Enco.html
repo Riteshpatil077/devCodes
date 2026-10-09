@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <script>
+        alert("TextDecoder Example");
+      // Syntax  let decoder = new TextDecodetr([label], [options]);
+       
+        let uint8Array = new Uint8Array([72,101,108,108,111]);
+        alert(new TextDecoder().decode(uint8Array));// result hello
+
+        // Syntax let encoder = new TextEncoder([label], [options]);
+        alert("TextEncoder Example");
+        let encoder = new TextEncoder();
+
+
+        let uint8Array1 = encoder.encode("hello");
+        alert(uint8Array1); // result
+        //  [104,101,108,108,111]
+
+        
+     </script>
+</body>
+</html>

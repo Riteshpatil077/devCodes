@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+       <title>Constructor</title>
+    </head>
+    <body>
+        <!-- <script>
+            'use strict';
+
+            function User(name)
+            {
+                this.name=name;
+               // alert(new.target);
+                this.isAdmin="not assign Admin";
+            }
+            let user = new User("Ritesh");
+            let user1 = new User("Patil");
+
+            alert(user.name);
+            alert(user.name+" "+user1.name)
+            alert(user.isAdmin);
+          
+        </script> -->
+        <script>
+            'use strict';
+            function meth_od(name)
+            {
+                this.name=name;
+
+                this.sayhi = function()
+                {
+                    alert("my name is : "+ this.name)
+                };
+            }
+
+            let copy = new meth_od("Ritesh patil");
+
+            copy.sayhi();
+        </script>
+
+        
+    </body>
+</html>

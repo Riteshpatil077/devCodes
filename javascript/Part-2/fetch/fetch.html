@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+alert("fetch url by async await");
+(async () => {
+    let response = await fetch('https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits');
+
+    let commits = await response.json();
+
+    alert(commits[0].author.login);
+})();    
+
+    alert("fetch by promise");
+    fetch('https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits')
+        .then(response => response.json())
+        .then(commits => alert(commits[0].author.login));
+    </script>
+</body>
+</html>

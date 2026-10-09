@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<body>
+    <script>
+        let age=19
+    function checkage(age)
+    {
+        if(age > 18)
+        {
+            return true;
+        }
+        else
+        {
+            return confirm('did parents allow you');
+        }
+    }
+
+    alert(checkage(age));
+   </script>
+
+   <script>
+    //function expression
+    "use strict"
+    let age_no =16;
+    let welcome;
+    if (age_no < 18)
+   {
+        welcome = function()
+        {
+            alert("hello.. function expression conditon unnder funtion and stored in variable welcome")
+        };
+       }
+
+       else{
+        welcome =function() 
+        {
+        alert("greetings!");
+       };
+    }
+
+    welcome();
+    let copy =welcome;
+    copy();  // welcome funtion expression copied in copy().
+
+
+    //callback function
+  function ask(question, yes, no) {
+  if (confirm(question)) yes();
+  else no();
+}
+
+function agree() {
+  alert("You agreed");
+}
+
+function cancel() {
+  alert("You cancelled");
+}
+
+ask("Do you agree?", agree, cancel);
+
+
+        //Arrow function
+        let name = () => alert("Hi I'm Ritesh");
+       name();
+
+        //Multi line Arrow function
+        let sum = (a,b) =>{
+            let result = a+b;
+            return result;
+        };
+        alert("multiline Arrow function"+sum(1,2));
+   </script>
+</body>
+</html>

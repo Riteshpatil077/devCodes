@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+        // Generator function 
+        //syntax construct: function*
+
+        function* generatorSequence()
+        {
+            yield 1;
+            yield 2;
+            yield 3;
+            return 4;
+        }
+
+        let gen = generatorSequence();
+       // alert(gen);  // result [object Generator]   ...not run
+
+        let one = gen.next();
+        alert(JSON.stringify(one));
+        
+        //iterables
+        for(let value of gen)
+        {
+            alert("value of generator : "+value); // ignoring return values
+
+        }
+
+        //...spread operator
+        let sequence = [0, ...generatorSequence()];
+        alert("Sequencally Run : "+ sequence);
+
+        //synbol.iterator
+        let range = {
+            from: 1,
+            to: 5,
+            *[Symbol.iterator](){
+                for(let value = this.from; value <= this.to; value++)
+            {
+                yield value;
+            }
+            }
+        };
+        alert( [...range]);
+    </script> -->
+
+    <script>
+        function* gen() {
+  try {
+    let result = yield "2 + 2 = ?"; // (1)
+
+    alert("The execution does not reach here, because the exception is thrown above");
+  } catch(e) {
+    alert(e); // shows the error
+  }
+}
+
+let generator = gen();
+
+let question = generator.next().value;
+
+generator.throw(new Error("The answer is not found in my database")); // (2)
+    </script>
+</body>
+</html>

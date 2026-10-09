@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <!-- <script>
+            // symboli.iterator"
+            let range = {
+                from : 1,
+                to : 5,
+
+                [Symbol.iterator](){
+                    return{
+                        current: this.from,
+                        last: this.to,
+
+                        next(){
+                            if(this.current <= this.last)
+                        {
+                            return{done: false, value:this.current++};
+                        }else{
+                            return { done:true};
+                        }
+                        }
+                    };
+                }
+            };
+
+            for(let value of range)
+            {
+                alert(`Symbol.iterator : ${value}`);
+            }
+        </script> -->
+
+        <!-- <script>
+            //async : Symbol.asynciterator
+            let range = { 
+                from:1,
+                to:5,
+
+                [Symbol.asyncIterator]()
+                {
+                    return{
+                        current:this.from,
+                        last: this.to,
+
+                        async next()
+                        {
+                            await new Promise(resolve => setTimeout(resolve,1000));
+
+                            if ( this.current <= this.last)
+                        {
+                            return { done:false, value: this.current++ };
+                        }else{
+                            return{ done: true};
+                        }
+                        }
+                    };
+                }
+            };
+            (async() => {
+                for await(let value of range)
+                {
+                    alert(value);
+                }
+            })();
+        </script> -->
+
+
+
+
+<!-- 
+
+        <script>
+async function* generateSequence(start, end) {
+
+  for (let i = start; i <= end; i++) {
+
+// Wow, can use await!
+await new Promise(resolve => setTimeout(resolve, 1000));
+
+yield i;
+}
+
+}
+
+(async () => {
+
+let generator = generateSequence(1, 5);
+for await (let value of generator) {
+alert(value); // 1, then 2, then 3, then 4, then 5 (with delay between)
+}
+
+})();
+ </script> -->
+
+ <script>
+    // GENARATOR SYMBOL ITERATOR
+
+    let range = {
+        from: 1,to:5,
+
+        async *[Symbol.asyncIterator]()
+        {
+            for(let value = this.from; value <= this.to; value++)
+                {
+                    await new Promise(resolve => setTimeout(resolve,2000));
+
+                    yield value;
+                }
+            
+        }
+    };
+    (async() => {
+        for await (let value of range)
+        {
+            alert(value);
+        }
+    })();
+ </script>
+</body>
+</html>

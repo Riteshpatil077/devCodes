@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable</title>
+</head>
+<body>
+    
+    <script>
+        "use strict";
+    // message="hello"; // without using "use strict"it run but it is bab practice.
+    let message="hello javascript!!"; 
+    alert(message);
+    </script>
+    
+    <script>let $ = 1; // declared a variable with the name "$"
+        let _ = 2; // and now a variable with the name "_"
+       
+        alert("sum value:"+$ + _); // 3</script>
+    <pre>variable naming :
+        1. The name must contain only letters, digits, or the symbols $ and _.
+        2. The first character must not be a digit.
+    </pre>
+
+    <script>
+    const myBirthday = '18.04.1982';
+    alert(myBirthday)</script>
+    <pre>When a programmer is sure that a variable will never change, they can declare it with const to guarantee and communicate that fact to everyone.</pre>
+
+    <!-- Data Type-->
+     <pre>DATA Types
+Primitive (7 types):
+
+Number
+
+BigInt
+
+String
+
+Boolean
+
+Null
+
+Undefined
+
+Symbol
+
+Non-Primitive (1 type):
+
+Object
+     </pre>
+    <script>
+        // 1. Number
+        let age = 22;
+        alert("Number: " + age);
+      
+        // 2. BigInt
+        let bigNumber = 123456789012345678901234567890n;
+        alert("BigInt: " + bigNumber);
+      
+        // 3. String
+        let name = "Ritu";
+        alert("String: " + name);
+      
+        // 4. Boolean
+        let isStudent = true;
+        alert("Boolean: " + isStudent);
+      
+        // 5. Null
+        let marks = null;
+        alert("Null: " + marks);
+      
+        // 6. Undefined
+        let city;
+        alert("Undefined: " + city);
+      
+        // 7. Symbol
+        let id = Symbol("id"); //The symbol type is used to create unique identifiers for objects. We have to mention it here for the sake of completeness, but also postpone the details till we know objects.
+        alert("Symbol: " + id.toString());
+      
+        // 8. Object (Non-Primitive)
+        let user = {
+          name: "Ritu",
+          age: 22,
+          course: "CSE"
+        };
+        alert("Object: Name = " + user.name + ", Age = " + user.age + ", Course = " + user.course);
+        
+        alert(typeof (true));
+      </script>
+      
+</body>
+</html>

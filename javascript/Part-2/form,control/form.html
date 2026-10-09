@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <form name="my">
+        <input name="one" value="1">
+        <input name="two" value="2">
+    </form>
+    <script>
+        let form = document.forms.my;
+        let elem = form.elements.one;
+
+        alert(elem.value);
+    </script>
+    <form>
+        <input type="radio" name="age" value="10">
+        <input type="radio" name="age" value="20"> 
+    </form>
+    <script>
+        let form2 = document.forms[1];
+        let ageElems = form2.elements.age;
+
+        alert(ageElems[0].value);
+    </script> -->
+
+    <!-- <form id="form">
+        <fieldset name="userFields">
+          <legend>info</legend>
+          <input name="login" type="text">
+        </fieldset>
+      </form>
+    
+      <script>
+        alert(form.elements.login); // <input name="login">
+    
+        let fieldset = form.elements.userFields;
+        alert(fieldset); // HTMLFieldSetElement
+    
+        // we can get the input by name both from the form and from the fieldset
+        alert(fieldset.elements.login == form.elements.login); // true
+      </script> -->
+
+
+    <!-- form Elements -->
+
+    <!-- <select id="select" multiple>
+        <option value="blues" selected>Blues</option>
+        <option value="rock" selected>Rock</option>
+        <option value="classic">Classic</option>
+    </select>
+    <script>
+        
+        let selected = Array.from(select.options)
+            .filter(option => option.selected)
+            .map(option => option.value);
+
+        alert(selected); 
+
+    </script> -->
+    <script>
+    let form = document.createElement('form');
+    form.action = 'https://google.com/search';
+    form.method = 'GET';
+
+    form.innerHTML ='<input name="q" value="youtube">';
+
+    document.body.append(form);
+    form.submit();
+</script>
+</body>
+
+</html>

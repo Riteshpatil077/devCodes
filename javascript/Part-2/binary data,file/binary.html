@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Data Examples</title>
+</head>
+<body>
+    <h1>Binary Data Examples</h1>
+    <script>
+        // Example 1: Creating an ArrayBuffer
+        alert("Example 1: Creating an ArrayBuffer");
+
+        let buffer = new ArrayBuffer(16); // create a buffer of length 16
+        alert("Buffer byte length: " + buffer.byteLength); // 16
+
+
+        // Example 2: Using a TypedArray (Uint32Array)
+        alert("Example 2: Using a TypedArray (Uint32Array)");
+        let view = new Uint32Array(buffer); // treat buffer as a sequence of 32-bit integers
+
+        alert("Bytes per element: " + Uint32Array.BYTES_PER_ELEMENT); // 4 bytes per integer
+
+        alert("View length: " + view.length); // 4
+
+        alert("View byte length: " + view.byteLength); // 16
+
+        view[0] = 123456; // write a value
+
+        alert("First value in view: " + view[0]); // 123456
+
+        // Example 3: Iterating over TypedArray
+        alert("Example 3: Iterating over TypedArray");
+        for (let num of view) {
+            alert(num); // 123456, then 0, 0, 0
+        }
+
+        // Example 4: TypedArray from an Array
+        alert("Example 4: TypedArray from an Array");
+        let arr = new Uint8Array([0, 1, 2, 3]);
+        alert("Array length: " + arr.length); // 4
+        alert("Second element: " + arr[1]); // 1
+
+        // Example 5: DataView
+        alert("Example 5: DataView");
+
+        let dataView = new DataView(buffer);
+
+        alert("8-bit number at offset 0: " + dataView.getUint8(0)); // 0
+
+        dataView.setUint32(0, 0); // set 4-byte number to max value
+
+        alert("32-bit number at offset 0: " + dataView.getUint32(0)); 
+
+        // Task: Concatenate Typed Arrays
+        alert("Task: Concatenate Typed Arrays");
+        function concat(arrays) {
+            // Calculate total length
+            let totalLength = arrays.reduce((sum, arr) => sum + arr.length, 0);
+            // Create a new Uint8Array to hold all data
+            let result = new Uint8Array(totalLength);
+            let offset = 0;
+            for (let arr of arrays) {
+                result.set(arr, offset);
+                offset += arr.length;
+            }
+            return result;
+        }
+
+        // Test the concat function
+        let arr1 = new Uint8Array([1, 2, 3]);
+        let arr2 = new Uint8Array([4, 5, 6]);
+        let arr3 = new Uint8Array([7, 8, 9]);
+        let concatenated = concat([arr1, arr2, arr3]);
+        alert("Concatenated array: " + concatenated); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    </script>
+</body>
+</html>

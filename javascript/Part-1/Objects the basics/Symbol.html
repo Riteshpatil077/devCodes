@@ -1,0 +1,22 @@
+<!-- , only two primitive types may serve as object property keys:
+ string type, or
+symbol type.
+
+A"Symbol" represent a unique identifier
+--> 
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            let id1 = Symbol("id");
+            //id is symbol and "id" is description
+            let id2 = Symbol();
+
+            alert(id1 == id2); // it result is false not equal .
+
+            alert(id1.tostring());
+            //or
+            alert(id1.description);
+        </script>
+    </body>
+</html>

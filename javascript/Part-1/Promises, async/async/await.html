@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+        async function f() // async keyword before function always return promise.
+        {
+            let promise = new Promise(resolve => {
+                setTimeout(() => resolve("Done!!"),1000);
+            });
+
+            let result = await promise; // await its wait until promise not finises.
+
+            alert(result);
+}
+ 
+f();
+
+    </script> -->
+<!-- 
+    <script>
+        // Error Handling
+        //If a promise fails, await throws an error.
+
+    //     async function f(){
+    //         try{
+    //             let res = await fetch("bad- url");
+
+    //         }catch(err)
+    //         {
+    //             console.log("Error Handling in async/await : "+err)
+    //         }
+    //         finally{
+    //             console.log("Request completed");
+    //         }
+    //     }
+    //     f();
+    // </script> -->
+
+    <!-- <script>
+        async function getpost()
+        {
+            try{
+                let response = await fetch ("https://jsonplaceholder.typi");//("https://jsonplaceholder.typicode.com/posts/1");
+                let data = await response.json();
+                console.log("post title : ",data.title);
+            }catch{
+                console.log("Error",error);
+            }
+            finally{
+                console.log("API call finished");
+            }
+        }
+        getpost(); -->
+    </script>
+
+    <!-- <script>
+        // task
+
+    async function loadJson(url) {
+         let response = await fetch(url);
+            if (response.status == 200) {
+                let json = await response.json();
+                return json;
+            } 
+                throw new Error(response.status);
+            
+            }
+            
+            loadJson('https://javascript.info/no-such-user.json')
+            .catch(alert);
+    </script> -->
+
+    <!-- <script>
+    class HttpError extends Error {
+    constructor(response) {
+    super(`${response.status} for ${response.url}`);
+    this.name = 'HttpError';
+    this.response = response;
+  }
+}
+
+async function loadJson(url) {
+    let response = await fetch(url)
+    
+      if (response.status == 200) {
+          let json = await response.json();
+          return json;
+      } 
+        throw new HttpError(response);
+      
+    
+}
+
+// Ask for a user name until github returns a valid user
+ async function demoGithubUser() {
+  
+    let user;
+   while(true)
+   {
+    let name = await prompt("Enter a name?", "iliakan");
+
+    try{
+        user = await loadJson(`https://api.github.com/users/${name}`);
+        break;
+    }catch(err){
+        if (err instanceof HttpError && err.response.status == 404) {
+        alert("No such user, please reenter.");
+        return demoGithubUser();
+      } else {
+        throw err;
+      }
+    }
+   }
+  alert(`Full Name : ${user.name}.`);
+  return user;
+}
+
+demoGithubUser();
+    </script> -->
+
+
+    <script>
+        // task
+
+        async function wait()
+        {
+            await new Promise(resolve => setTimeout(resolve,3000));
+
+            return 10;
+        }
+
+        function f(){
+            wait().then(result => alert(result));
+        }
+
+        f();
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        new Promise((resolve, reject) => {
+
+throw new Error("Whoops!");
+
+}).catch(
+    function(error) { 
+if (error instanceof URIError) {
+ 
+} else {
+  alert("Can't handle such error");
+
+  throw error; 
+}
+
+}).then(function() {
+
+}).catch(error => { 
+
+alert(`The unknown error has occurred: ${error}`);
+
+
+});
+    </script>
+</body>
+</html>

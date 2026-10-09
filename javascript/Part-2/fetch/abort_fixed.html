@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abort Controller Example</title>
+</head>
+
+<body>
+    <h1>Fetch Abort Example</h1>
+    <p>Check the console for logs.</p>
+
+    <script>
+        // --- First Request ---
+        console.log('Starting Request 1...');
+        let controller = new AbortController();
+        let signal = controller.signal;
+
+        fetch('https://jsonplaceholder.typicode.com/posts/1', { signal })
+            .then(response => response.json())
+            .then(data => console.log('Request 1 Success:', data))
+            .catch(err => {
+                if (err.name === 'AbortError') {
+                    console.log('Request 1 was aborted');
+                } else {
+                    console.error('Request 1 Error:', err);
+                }
+            });
+
+        // Abort the first request after 100ms
+        setTimeout(() => {
+            console.log('Aborting Request 1...');
+            controller.abort();
+        }, 100);
+
+
+        // --- Second Request (Correct Way) ---
+        // Option A: Use different variable names (Recommended for clarity)
+        console.log('Starting Request 2...');
+        let controller2 = new AbortController();
+        let signal2 = controller2.signal;
+
+        fetch('https://jsonplaceholder.typicode.com/posts/2', { signal: signal2 })
+            .then(response => response.json())
+            .then(data => console.log('Request 2 Success:', data))
+            .catch(err => console.error('Request 2 Error:', err));
+
+
+        /*
+        // Option B: Reassign existing variables (Remove 'let')
+        controller = new AbortController();
+        signal = controller.signal;
+
+        fetch('...', { signal });
+        */
+    </script>
+</body>
+
+</html>

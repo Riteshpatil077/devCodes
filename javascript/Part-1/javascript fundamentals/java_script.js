@@ -1,0 +1,1 @@
+alert('External javascript file Running');

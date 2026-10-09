@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='UTF-8'>
+    <meta name="viewport"
+    content="width=device-width,initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+        <!-- <script>
+            "use strict";
+
+            //object
+           // let user = {}; object literal syntax
+           // let user = new object();  object constructor syntax
+
+           let user = {
+            name : 'ritesh',
+            age : 23,
+            
+           }; // user object having two properties name and age with value
+         
+           alert(user.name);
+           
+        </script>
+
+        <script>
+            'use strict';
+            // these properties are all right
+let obj = {
+  for: 1,
+  let: 2,
+  return: 3
+};
+
+alert( obj.for + obj.let + obj.return );
+        </script>
+
+        <script>
+            "use strict";
+            function makeUser(name,age)
+            {
+                return{
+                    name,
+                    age
+                };
+            }
+
+            let User = makeUser("Ritesh",23); // object makeUser codied reference to User 
+            alert(User.name);
+            alert( "age" in user ); // true, user.age exists
+            alert( "blabla" in user ); // false, user.blabla doesn't exist
+
+            //for...in
+            for (let key in user)
+            {
+                alert(key); // result only properties name
+            }
+
+            for (let key in user)
+            {
+                alert(User[key]); // result only properties value
+            }
+
+           // ordered
+            let codes = {
+            "49": "Germany",
+            "41": "Switzerland",
+            "44": "Great Britain",
+            // ..,
+            "1": "USA"
+            };
+
+            for(let code in codes)
+            {
+                alert(code); // result sorted way
+            }
+
+            for ( let code in codes)
+            {
+                alert(+code); // sequencial
+            }
+        </script>
+ -->
+
+        <script>
+            "use strict";
+            let user_obj = {
+                name : 'ritesh',
+                age : 30,     
+        sayhi()
+            {
+                alert("keyword 'this' used in method : "+this.name);
+            }
+             
+        };
+            function sayhello()
+            {
+                alert("say hello.!!");
+            }
+            user_obj.sayhi();
+            user_obj.f = sayhello;
+            user_obj.f();
+        </script>
+</body>
+</html>

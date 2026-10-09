@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Handling</title>
+</head>
+<body>
+    <script>
+        // try...catch only works for runtime errors
+       // try {
+    //         alert('start of try block');
+            
+    //         // lalalasss;  // this causes an error : reference error
+            
+    //          setTimeout(function(){
+    //             try {
+    //             noSuchVariable;
+    //          }
+    //      catch (error) {
+    //         alert('An error occurred : '+ error);
+    //     }
+    // }, 1000);
+            
+    //         alert('end of try block');
+    //      // } catch (error) {
+    //         alert('error.name:'+ error.name);
+    //         alert('error.message:'+ error.message);
+    //         alert('error.stack:'+ error.stack); 
+    //      // }
+    </script>
+<!--       
+    <script>
+        let json = {,"age":"23"}; // syntax error
+    try{
+          
+
+           // let user = JSON.parse("{bad json oo0oo}");//syntax error
+            
+           //  user = JSON.parse("{bad json oo0oo}");// rethrows a syntax error
+           
+           let user = JSON.parse('{"age":23}'); // no name property
+            if (!user.name) {
+                throw new SyntaxError("Incomplete data: no name"); // (*)
+            }
+            alert(user.name);
+            alert(user.age);
+    }catch (error){
+        alert('error in JSON Format : '+ error) 
+
+        alert( "Our apologies, the data has errors, we'll try to request it one more time." );
+
+        alert( err.name );
+
+        alert( err.message );
+
+        if (err instanceof SyntaxError) {
+    alert( "JSON Error: " + err.message );
+  } else {
+    throw err; // rethrow (*)
+  }
+
+    }
+    </script> -->
+<!-- 
+    <script>
+            try {
+  alert( 'try' );
+  if (confirm('Make an error?')) BAD_CODE();
+} catch (err) {
+  alert( 'catch' );
+} finally {
+  alert( 'finally' );
+}
+    </script> -->
+
+    <script>
+        //Global catch
+
+        window.onerror = function(meassage,url,line,col,error)
+        {
+            alert(`${meassage}\n At ${line}:${col} of ${url}`);
+        }
+
+        function readData(){
+            errorfunction();
+        }
+
+        readData();
+    </script>
+</body>
+</html>

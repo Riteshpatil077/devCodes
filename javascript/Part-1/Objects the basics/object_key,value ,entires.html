@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            function sumSalaries(salaries)
+            {   let total=0;
+                let sum = Object.values(salaries);
+                for (let add of sum)
+            {
+                total += add;
+            }
+            return total;
+            }
+
+            function countProperties(salaries)
+            {
+                return Object.keys(salaries).length;
+            }
+
+                let salaries = {
+                "John": 100,
+                "Pete": 300,
+                "Mary": 250
+                };
+
+                alert( sumSalaries(salaries));
+
+                alert(countProperties(salaries));
+        </script>
+    </body>
+</html>

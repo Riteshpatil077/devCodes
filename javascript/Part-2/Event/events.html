@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+        let count = 0;
+        function countClick()
+        {
+            count++;
+            alert(`Button clicked ${count} times`);
+        }
+    </script>
+    <input value="Click Button" onclick ="countClick()" type="button"> -->
+
+  
+    <!-- <input id="elem" type="button" value="Click Me">
+    <script>
+          // Using addEventListener
+
+        let count = 0;
+        function countClick()
+        {
+            count++;
+            alert(`button clicked ${count} times`);
+        };
+        
+  function handler2() {
+    alert('Thanks again!');
+  }
+        elem.onClick = () =>{
+            alert("hello");
+        }
+        elem.addEventListener('click', countClick);
+        elem.addEventListener('click',handler2)
+
+    </script> -->
+
+
+    <button id="elem">Click me</button>
+    <script>
+        class Menu{
+            handleEvent(event)
+            {
+                let method = 'on' + event.type[0].toUpperCase() + event.type.slice(1);
+                this[method](event);  
+            }
+        }
+    </script>
+</body>
+</html>

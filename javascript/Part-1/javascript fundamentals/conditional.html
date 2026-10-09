@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condition</title>
+</head>
+<body>
+    <script>
+        // if condition
+
+//          let DATE = prompt("write todays date ");
+//          if (DATE == "16-01-2026"){
+//             alert("Date is correct..");
+//          }
+//             else if (DATE < "16-01-2026")
+//             {
+//                 alert("Written date is yesterdays date it is !!!");
+//             }
+
+//         else{
+//             alert("Check date again..!!");
+//         }
+//           //Conditional operator ‘?’
+//             let age=prompt("YOURS AGE ?",18)
+//           let result = (age>18) ? true : false;
+//           alert(result);
+
+//           let message = (age < 3) ? "hi baby" : (age<=18) ? "Teenager's" : (age>18) ? "hello adult":"check age!!";
+
+// alert( message );
+
+// //Non-traditional use of ‘?’
+
+// let company = prompt("which is your favorite company?");
+
+// (company != null) ?
+//    alert('Right!') : alert('Wrong.');
+//     </script>
+   
+   
+     <!-- <script>
+             //while 
+             //define while loop performed in until condition not terminated 
+
+            let n=5
+             while(n)
+             {
+
+                alert(n);
+                n--;
+             }
+
+             //do -- while // do..while run once check while condition truthy execute it again and again
+
+             let i = 0;
+                do {
+                alert( i );
+                i++;
+                } while (i < 3);
+
+                //for loop
+                //define for loop  : ittreate the loop exact number of time we know 
+
+                for (let i = 0; i < 3; i++) { // shows 0, then 1, then 2
+                alert(i);
+
+               // break; // for loop is break first ittreaction.
+                }
+
+                let sum = 0;
+
+                while (true) {
+
+                let value = +prompt("Enter a number", '');
+
+                if (!value) 
+                    //break; // break point of loop
+
+                    continue;//it stops the current iteration and forces the loop to start a new one (if the condition allows).
+                
+                sum += value;
+
+                }
+                alert( 'Sum: ' + sum );
+</script> -->
+
+<script>
+        //Labels for break/continue
+
+        outer : for(let i=0;i<=3;i++){
+              inner : for(let j=1;j<=4;j++){
+                let input = prompt("value form for loop ($(i),$(j))",'0,0');
+                if (!input) break outer;
+              }
+        }
+        alert('done');
+</script>
+</body>
+</html>
