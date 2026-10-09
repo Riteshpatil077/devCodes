@@ -1,0 +1,51 @@
+<!--
+In human language, we often emphasize certain words to alter the meaning of a sentence, and we often want to mark certain words as important or different in some way. HTML provides various semantic elements to allow us to mark up textual content with such effects, and in this section, we'll look at a few of the most common ones.
+-->
+<!--Strong importance
+To emphasize important words, we tend to stress them in spoken language and bold them in written language. For example:
+
+This liquid is highly toxic.
+
+I am counting on you. Do not be late!-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emphasis</title>
+</head>
+<body>
+    <h1>Emphasis and importance</h1>
+<!-- scientific names -->
+<p>
+    The Ruby-throated Hummingbird (<i>Archilochus colubris</i>) is the most common
+    hummingbird in Eastern (<i>North America</i>)
+</p>
+<!-- foreign words -->
+<p>
+    The menu was a sea of exotic words like <i lang="uk-latn">vatrushka</i>,
+    <i lang="id">nasi goreng</i> and <i lang="fr">soupe à l'oignon</i>.
+</p>
+
+
+<!-- a known misspelling -->
+<p>Someday I'll learn how to <u class="spelling-error">spel</u> better.</p>
+
+<!-- term being defined when used in a definition -->
+<dl> <!--Stands for Description List / Definition List
+Used to show terms and their meanings-->
+
+  <dt>Semantic HTML</dt><!--Stands for Definition Term
+   This is the word / term you are defining
+   Semantic HTML-->
+  <dd>
+    Use the elements based on their <b>semantic</b> meaning, not their
+    appearance.
+  </dd><!--Stands for Definition Description
+  This is the meaning / explanation of the term
+  <b> makes text bold-->
+</dl>
+
+</body>
+</html>

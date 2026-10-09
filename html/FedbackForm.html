@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Forms challenge</title>
+    <link href="style.css" rel="stylesheet" />
+    <script defer src="index.js"></script>
+  </head>
+  <body>
+    
+    <h2>We want your feedback!</h2>
+    <p>
+    We're very excited that you visited <a href="https://search.brave.com/images?q=lettel+house+in+woods">the little house in the woods</a>,
+    and we want to hear what you thought of it! Please fill in the below
+    sections. You don't need to provide your name or contact details, but
+    if you do, we'll enter you into a <a href="https://www.scotsman.com/news/omaze-scottish-house-prize-draw-win-ps4m-mansion-in-highlands-as-brian-cox-launches-latest-raffle-4991825">prize draw</a> where you'll have a chance
+    to win prizes.
+    </p>
+    <img
+      src="https://mdn.github.io/shared-assets/images/examples/learn/woodland-strip.jpg"
+      alt="" />
+
+    <form>
+    <div class="form-section">
+    <h2>Facilities</h2>
+    <fieldset>
+    <legend>Was the porridge</legend>
+    <input type="radio" id="porridge1" name="porridge" value="hot" checked/>
+    <label for="porridge">Too hot?</label>
+    <input type="radio" id="porridge1" name="porridge" value="hot" checked/>
+    <label for="porridge">Too cold?</label>
+    <input type="radio" id="porridge1" name="porridge" value="hot" checked/>
+    <label for="porridge">Just right?</label>
+    </fieldset>
+
+    <fieldset>
+    <legend>were the beds</legend>
+    
+    <input type="radio" id="porridge2" name="porridge" value="hards"/><lable for="bebs1">Too hard?</lable>
+    <input type="radio" id="porridge2" name="porridge" value="hards"/><lable for="bebs2">Too soft?</lable>
+    <input type="radio" id="porridge2" name="porridge" value="hards"/><lable for="bebs3">just right?</lable>
+</fieldset>
+
+    <legend>
+    Describe the chairs (select all you agree with)</legend>
+    <input type="checkbox" id="comfy" name="comfy"/>
+    <label for="comfy">comfy</label>
+    <input type="checkbox" id="Luxurious" name="Luxurious"/>
+    <input type="checkbox" id=" Hi tec" name=" Hi tec"/>
+    <input type="checkbox" id="   Pretty" name="   Pretty"/>
+    <input type="checkbox" id="    Majestic
+    " name="Majestic"/>
+    
+</div>
+    --
+<div class="form-section">
+    <h2>About your hosts</h2>
+
+    <div class="separator">
+    <lable for="favorite">Who's your favorite bear?</lable>
+    <select name="favorite" id="favorite">
+    <option value="papa">Papa bear</option>
+    <option value="Mama bear">Mama bear</option>
+    <option value="Junior">Junior</option>
+    <option value="Randy">Cousin Randy</option>
+    </select>
+    </div>
+   
+ 
+    <div class="separator">
+        <lable for="greeting">
+        Which greeting did you prefer?</lable>
+        <select name="greeting" id="greeting">
+        <option value="Wave">Wave</option>
+        <option value="Friendly greeting">Friendly greeting</option>
+        <option value="Growl">Growl</option>
+        <option value=" Claw marks in the door"> Claw marks in the door</option>
+        </select>
+        </div>
+   
+   
+    
+    
+   
+
+    --
+    <div class="form-section">
+    <h2>Any other feedback?</h2>
+    <label for="comments">Give us your comments</label>
+    <textarea id="comments" name="comments"></textarea>
+      </div>
+
+    --
+    <div class="form-section">
+    <h2>Your details</h2>
+
+    <div class="separator">
+    <lable for="name">Name</lable>
+    <input type="text" id="name" name="name"/>
+    </div>
+
+    <div class="separator">
+        <lable for=" Email">Email</lable>
+        <input type="text" id=" Email" name=" Email"/>
+    </div>
+        
+    <div class="separator">
+            <lable for="Phone">Phone</lable>
+            <input type="text" id="Phone" name="Phone"/>
+        </div>
+    
+    </div>
+    --
+<div class="separator">
+    <button>Submit</button>
+    </div>
+    
+
+    --
+    
+    </form>
+  </body>
+</html>

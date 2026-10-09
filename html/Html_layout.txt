@@ -1,0 +1,13 @@
+1. <main> : 
+        <main> is for content unique to this page. Use <main> only once per page, and put it directly inside <body>. Ideally this shouldn't be nested within other elements.
+2. <article> :  
+        encloses a block of related content that makes sense on its own without the rest of the page (for example, a single blog post).   
+3. <section> :
+        is similar to <article>, but it is more for grouping together a single part of the page that constitutes one single piece of functionality (like a mini map, or a set of article headlines and summaries), or a theme. It's considered best practice to begin each section with a heading; also note that you can break <article>s up into different <section>s, or <section>s up into different <article>s, depending on the context.
+4. <aside> :
+         contains content that is not directly related to the main content but can provide additional information indirectly related to it (glossary entries, author biography, related links, etc.).   
+5. <header>  : 
+        represents a group of introductory content. If it is a child of <body> it defines the global header of a webpage, but if it's a child of an <article> or <section> it defines a specific header for that section (try not to confuse this with titles and headings).
+6.  <nav> : contains the main navigation functionality for the page. Secondary links, etc., would not go in the navigation.
+7. <footer> : represents a group of end content for a page.       
+
